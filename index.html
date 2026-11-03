@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es-MX" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ══════════════ SEO ══════════════ -->
+  <title>ONA Studio | Estudio Creativo: Video, Podcast, Branding y Web</title>
+  <meta name="description" content="ONA Studio es un estudio creativo y agencia de marketing: grabación de video y podcast, edición de video, estilo visual de marca y desarrollo web a tu medida.">
+  <meta name="keywords" content="estudio creativo, agencia de marketing, grabación de video, grabación de podcast, edición de video, identidad de marca, branding, estilo visual, diseño web, desarrollo web, ONA Studio">
+  <meta name="author" content="ONA Studio">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0F1FB2">
+  <!-- TODO producción: descomenta y usa el dominio real -->
+  <!-- <link rel="canonical" href="https://www.TU-DOMINIO.com/"> -->
+
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="ONA Studio">
+  <meta property="og:title" content="ONA Studio | Estudio Creativo y Agencia de Marketing">
+  <meta property="og:description" content="Grabamos tu podcast en video, editamos tus videos, cuidamos el estilo visual de tu marca y desarrollamos tu página web.">
+  <!-- TODO producción: og:image debe ser una URL absoluta (https://TU-DOMINIO.com/assets/img/og-image.jpg) -->
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <!-- Datos estructurados (Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "ONA Studio",
+    "alternateName": "ONA Estudio Creativo",
+    "description": "Estudio creativo y agencia de marketing: grabación de podcast en video, edición de video, estilo visual de marca y desarrollo web.",
+    "slogan": "Creamos estrategias visuales integrales, construimos la identidad de tu marca y desarrollamos sitios web funcionales que comunican tu verdadera esencia.",
+    "email": "ona.studiosc@gmail.com",
+    "telephone": "+523321697822",
+    "areaServed": "MX",
+    "sameAs": ["https://www.instagram.com/ona.studiosc"],
+    "knowsAbout": ["Grabación de video", "Grabación de podcast", "Edición de video", "Identidad de marca", "Estilo visual", "Desarrollo web", "Marketing digital"]
+  }
+  </script>
+
+  <!-- Fuentes: Anton + Bebas Neue (condensadas, como el logotipo), DM Sans (cuerpo) y Caveat Brush (notas a mano) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Caveat+Brush&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Imagen principal del hero: se precarga para mejorar el LCP -->
+  <link rel="preload" as="image" href="assets/img/ona-foto-escritorio.jpg">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Sin JavaScript: todo el contenido debe seguir visible -->
+  <noscript>
+    <style>
+      #loader { display: none; }
+      body.is-loading { overflow: auto; }
+      .reveal, .hero-badge, .hero-sub, .hero-ctas, .hero-trust, .hero-bg { opacity: 1; transform: none; }
+      .hero-bg { transform: translateY(-50%); }
+      .hero-title .line > span { transform: none; }
+    </style>
+  </noscript>
+</head>
+<body class="is-loading">
+
+  <!-- ══════════════════════════════════════════════════════
+       LOADER — el logotipo se dibuja solo (js/main.js anima los trazos)
+  ══════════════════════════════════════════════════════ -->
+  <div id="loader" aria-hidden="true">
+    <svg class="loader-logo" id="loader-logo" viewBox="2 -5 992 690" role="img" aria-label="Logotipo de ONA Studio">
+      <g class="ll-fill">
+        <path d="M483.2 19.5C403.7 38.9 380.2 167.1 445.0 227.3C519.4 296.3 619.9 199.2 586.1 91.0C570.2 40.4 525.3 9.2 483.2 19.5ZM514.1 44.6C548.4 54.7 572.3 100.4 567.1 146.0C557.2 233.2 472.2 254.7 440.7 178.0C412.9 110.5 458.2 28.2 514.1 44.6Z"/>
+        <path d="M489.5 61.0C465.3 63.7 445.0 92.7 440.9 130.7C437.0 166.8 445.7 191.0 468.0 205.9C494.0 223.2 532.4 212.3 546.1 183.7C551.8 171.7 553.0 164.8 554.0 138.5C554.7 117.6 555.0 114.7 557.5 107.2C560.6 97.3 560.3 94.4 555.3 88.9C546.5 79.2 517.8 64.4 502.0 61.5C500.1 61.1 497.8 60.7 497.0 60.6C496.2 60.4 492.8 60.6 489.5 61.0ZM506.2 99.7C520.2 109.3 524.5 156.7 512.8 171.6C507.6 178.1 494.0 181.0 487.5 177.0C476.6 170.2 470.4 145.9 475.2 128.5C482.5 102.0 494.1 91.2 506.2 99.7Z"/>
+        <path d="M105.5 111.5C98.1 113.1 96.5 113.6 85.5 118.3C23.4 144.8 15.5 234.7 71.9 272.6C142.8 320.3 233.6 252.6 207.3 171.5C193.6 129.2 148.5 102.6 105.5 111.5ZM136.8 129.5C149.3 132.1 158.9 136.8 169.2 145.3C173.9 149.3 173.9 149.3 171.1 151.9C165.9 156.8 161.1 168.3 158.0 183.5C156.2 192.5 156.2 192.5 156.1 170.8L156.0 149.0L152.8 149.6C139.1 152.2 127.0 166.1 122.0 185.2C120.1 192.5 120.1 192.5 120.1 170.7L120.0 148.9L115.3 149.5C108.0 150.5 98.7 153.8 93.7 157.1C56.9 181.4 66.1 236.4 108.7 247.5C120.8 250.7 120.0 252.0 120.1 227.2C120.2 215.3 120.4 206.4 120.6 207.5C125.3 229.9 137.5 245.8 152.3 248.5L156.0 249.2L156.1 228.4C156.1 207.5 156.1 207.5 158.0 216.1C160.7 228.8 165.4 240.0 169.9 244.9L173.7 249.1L169.2 253.1C133.1 284.9 73.8 270.5 56.5 225.7C36.1 172.8 81.8 117.9 136.8 129.5ZM183.3 161.8C195.2 180.2 197.1 207.3 187.9 227.6C185.3 233.6 176.6 247.0 175.4 247.0C175.2 247.0 175.0 225.4 175.0 199.0C175.0 145.7 174.5 148.0 183.3 161.8ZM113.0 199.1L113.0 241.2L109.8 240.6C85.0 235.7 70.5 204.7 81.8 180.6C87.0 169.5 102.1 157.6 111.8 157.1C112.7 157.0 113.0 166.1 113.0 199.1ZM149.0 199.0C149.0 222.4 148.6 240.0 148.1 240.0C145.3 240.0 136.9 230.4 133.1 222.8C124.2 204.6 125.3 187.0 136.6 169.3C139.3 165.1 146.9 158.0 148.7 158.0C148.8 158.0 149.0 176.4 149.0 199.0ZM167.9 199.7C167.8 224.2 167.7 225.3 166.3 221.0C163.0 211.5 164.1 174.0 167.6 174.0C167.8 174.0 168.0 185.6 167.9 199.7Z"/>
+        <path d="M860.6 111.6C797.3 124.1 767.6 196.5 803.9 249.9C834.8 295.3 900.3 301.5 939.9 262.7C979.9 223.5 973.8 156.8 927.3 125.2C908.6 112.5 882.7 107.2 860.6 111.6ZM892.0 129.5C916.1 135.1 934.5 150.6 943.7 173.2C946.0 179.0 946.1 179.5 944.5 180.5C943.5 181.0 941.2 182.5 939.3 183.7C927.7 191.4 923.9 191.2 909.5 182.5C903.3 178.7 898.9 179.2 889.7 184.6C878.5 191.3 875.3 191.0 861.5 182.4C855.6 178.7 849.0 179.4 841.7 184.4C832.5 190.7 826.1 190.8 817.1 184.7C814.4 183.0 811.5 181.0 810.5 180.4C808.7 179.4 808.8 179.0 811.3 172.8C824.0 140.9 859.4 122.0 892.0 129.5ZM813.5 211.5C826.5 219.4 831.0 220.1 838.6 215.3C850.4 208.0 854.6 207.3 861.5 211.5C875.6 220.0 878.5 220.2 889.7 213.6C898.9 208.2 903.3 207.7 909.5 211.5C923.6 220.0 926.5 220.2 937.7 213.6C945.1 209.2 948.0 208.1 948.0 209.7C946.9 232.1 923.7 259.2 899.0 267.1C860.2 279.4 816.4 254.8 808.1 216.1C806.3 207.8 806.8 207.4 813.5 211.5Z"/>
+        <path d="M599.0 255.0C590.1 256.6 581.1 261.7 577.3 267.4C568.0 281.2 567.9 289.5 575.6 445.0C579.3 518.4 579.4 524.5 576.5 525.6C569.0 528.5 478.6 457.5 421.3 403.8C392.1 376.4 376.5 358.6 360.0 334.0C346.4 313.7 341.5 309.4 329.2 307.0C301.0 301.4 279.3 329.8 282.0 368.5C282.4 374.0 282.7 378.6 282.6 378.6C282.5 378.7 276.7 375.2 269.5 370.9C212.4 336.0 168.9 326.0 138.1 340.5C94.4 361.2 62.0 416.2 56.1 480.0C48.9 557.7 59.0 595.1 97.2 631.5C129.4 662.3 167.1 670.9 210.4 657.4C267.1 639.6 295.4 596.0 297.8 522.5C298.4 502.5 298.4 502.5 299.7 511.0C311.7 590.8 315.7 605.9 328.5 619.1C350.9 642.2 384.9 625.3 385.1 591.0C385.1 581.3 384.4 575.4 376.0 521.0C369.2 477.0 367.9 465.0 370.0 465.0C371.4 465.0 399.7 486.4 425.0 506.6C562.0 616.1 602.3 636.7 636.4 614.6C649.2 606.3 652.2 600.8 652.8 584.7L653.2 573.0L660.5 582.7C684.2 614.5 711.6 629.5 746.0 629.4C784.3 629.3 807.2 614.6 837.0 571.0C849.3 553.0 854.6 546.0 856.0 546.0C857.6 546.0 860.9 558.4 867.0 587.1C878.1 638.6 882.2 646.0 901.1 649.1C922.0 652.6 939.3 644.9 943.6 630.4C948.3 614.8 941.1 565.9 920.9 476.0C901.9 391.4 897.8 381.2 875.7 363.1C816.9 315.2 749.8 307.6 703.5 343.8C686.7 357.0 664.2 382.3 651.5 402.4L646.5 410.3L645.8 395.9C641.9 320.3 637.6 277.5 632.7 265.0C628.9 255.6 616.8 252.0 599.0 255.0ZM789.1 399.6C812.4 405.4 819.0 417.5 812.6 442.6C799.2 495.0 766.5 555.4 749.8 558.5C735.8 561.1 706.0 525.3 702.1 500.9C695.0 457.2 728.1 403.8 765.9 398.0C772.5 397.0 781.3 397.6 789.1 399.6ZM191.6 414.6C208.6 424.6 217.9 446.3 223.5 488.9C229.2 532.2 218.9 569.8 198.3 580.9C174.4 593.9 155.9 590.1 142.2 569.6C119.9 536.3 119.9 488.6 142.0 443.5C155.3 416.4 175.0 404.9 191.6 414.6Z"/>
+      </g>
+      <g class="ll-stroke">
+        <path class="ll-s" data-g="1" d="M483.2 19.5C403.7 38.9 380.2 167.1 445.0 227.3C519.4 296.3 619.9 199.2 586.1 91.0C570.2 40.4 525.3 9.2 483.2 19.5Z"/>
+        <path class="ll-s" data-g="1" d="M514.1 44.6C548.4 54.7 572.3 100.4 567.1 146.0C557.2 233.2 472.2 254.7 440.7 178.0C412.9 110.5 458.2 28.2 514.1 44.6Z"/>
+        <path class="ll-s" data-g="1" d="M489.5 61.0C465.3 63.7 445.0 92.7 440.9 130.7C437.0 166.8 445.7 191.0 468.0 205.9C494.0 223.2 532.4 212.3 546.1 183.7C551.8 171.7 553.0 164.8 554.0 138.5C554.7 117.6 555.0 114.7 557.5 107.2C560.6 97.3 560.3 94.4 555.3 88.9C546.5 79.2 517.8 64.4 502.0 61.5C500.1 61.1 497.8 60.7 497.0 60.6C496.2 60.4 492.8 60.6 489.5 61.0Z"/>
+        <path class="ll-s" data-g="1" d="M506.2 99.7C520.2 109.3 524.5 156.7 512.8 171.6C507.6 178.1 494.0 181.0 487.5 177.0C476.6 170.2 470.4 145.9 475.2 128.5C482.5 102.0 494.1 91.2 506.2 99.7Z"/>
+        <path class="ll-s" data-g="0" d="M105.5 111.5C98.1 113.1 96.5 113.6 85.5 118.3C23.4 144.8 15.5 234.7 71.9 272.6C142.8 320.3 233.6 252.6 207.3 171.5C193.6 129.2 148.5 102.6 105.5 111.5Z"/>
+        <path class="ll-s" data-g="0" d="M136.8 129.5C149.3 132.1 158.9 136.8 169.2 145.3C173.9 149.3 173.9 149.3 171.1 151.9C165.9 156.8 161.1 168.3 158.0 183.5C156.2 192.5 156.2 192.5 156.1 170.8L156.0 149.0L152.8 149.6C139.1 152.2 127.0 166.1 122.0 185.2C120.1 192.5 120.1 192.5 120.1 170.7L120.0 148.9L115.3 149.5C108.0 150.5 98.7 153.8 93.7 157.1C56.9 181.4 66.1 236.4 108.7 247.5C120.8 250.7 120.0 252.0 120.1 227.2C120.2 215.3 120.4 206.4 120.6 207.5C125.3 229.9 137.5 245.8 152.3 248.5L156.0 249.2L156.1 228.4C156.1 207.5 156.1 207.5 158.0 216.1C160.7 228.8 165.4 240.0 169.9 244.9L173.7 249.1L169.2 253.1C133.1 284.9 73.8 270.5 56.5 225.7C36.1 172.8 81.8 117.9 136.8 129.5Z"/>
+        <path class="ll-s" data-g="0" d="M183.3 161.8C195.2 180.2 197.1 207.3 187.9 227.6C185.3 233.6 176.6 247.0 175.4 247.0C175.2 247.0 175.0 225.4 175.0 199.0C175.0 145.7 174.5 148.0 183.3 161.8Z"/>
+        <path class="ll-s" data-g="0" d="M113.0 199.1L113.0 241.2L109.8 240.6C85.0 235.7 70.5 204.7 81.8 180.6C87.0 169.5 102.1 157.6 111.8 157.1C112.7 157.0 113.0 166.1 113.0 199.1Z"/>
+        <path class="ll-s" data-g="0" d="M149.0 199.0C149.0 222.4 148.6 240.0 148.1 240.0C145.3 240.0 136.9 230.4 133.1 222.8C124.2 204.6 125.3 187.0 136.6 169.3C139.3 165.1 146.9 158.0 148.7 158.0C148.8 158.0 149.0 176.4 149.0 199.0Z"/>
+        <path class="ll-s" data-g="0" d="M167.9 199.7C167.8 224.2 167.7 225.3 166.3 221.0C163.0 211.5 164.1 174.0 167.6 174.0C167.8 174.0 168.0 185.6 167.9 199.7Z"/>
+        <path class="ll-s" data-g="2" d="M860.6 111.6C797.3 124.1 767.6 196.5 803.9 249.9C834.8 295.3 900.3 301.5 939.9 262.7C979.9 223.5 973.8 156.8 927.3 125.2C908.6 112.5 882.7 107.2 860.6 111.6Z"/>
+        <path class="ll-s" data-g="2" d="M892.0 129.5C916.1 135.1 934.5 150.6 943.7 173.2C946.0 179.0 946.1 179.5 944.5 180.5C943.5 181.0 941.2 182.5 939.3 183.7C927.7 191.4 923.9 191.2 909.5 182.5C903.3 178.7 898.9 179.2 889.7 184.6C878.5 191.3 875.3 191.0 861.5 182.4C855.6 178.7 849.0 179.4 841.7 184.4C832.5 190.7 826.1 190.8 817.1 184.7C814.4 183.0 811.5 181.0 810.5 180.4C808.7 179.4 808.8 179.0 811.3 172.8C824.0 140.9 859.4 122.0 892.0 129.5Z"/>
+        <path class="ll-s" data-g="2" d="M813.5 211.5C826.5 219.4 831.0 220.1 838.6 215.3C850.4 208.0 854.6 207.3 861.5 211.5C875.6 220.0 878.5 220.2 889.7 213.6C898.9 208.2 903.3 207.7 909.5 211.5C923.6 220.0 926.5 220.2 937.7 213.6C945.1 209.2 948.0 208.1 948.0 209.7C946.9 232.1 923.7 259.2 899.0 267.1C860.2 279.4 816.4 254.8 808.1 216.1C806.3 207.8 806.8 207.4 813.5 211.5Z"/>
+        <path class="ll-s" data-g="w" d="M599.0 255.0C590.1 256.6 581.1 261.7 577.3 267.4C568.0 281.2 567.9 289.5 575.6 445.0C579.3 518.4 579.4 524.5 576.5 525.6C569.0 528.5 478.6 457.5 421.3 403.8C392.1 376.4 376.5 358.6 360.0 334.0C346.4 313.7 341.5 309.4 329.2 307.0C301.0 301.4 279.3 329.8 282.0 368.5C282.4 374.0 282.7 378.6 282.6 378.6C282.5 378.7 276.7 375.2 269.5 370.9C212.4 336.0 168.9 326.0 138.1 340.5C94.4 361.2 62.0 416.2 56.1 480.0C48.9 557.7 59.0 595.1 97.2 631.5C129.4 662.3 167.1 670.9 210.4 657.4C267.1 639.6 295.4 596.0 297.8 522.5C298.4 502.5 298.4 502.5 299.7 511.0C311.7 590.8 315.7 605.9 328.5 619.1C350.9 642.2 384.9 625.3 385.1 591.0C385.1 581.3 384.4 575.4 376.0 521.0C369.2 477.0 367.9 465.0 370.0 465.0C371.4 465.0 399.7 486.4 425.0 506.6C562.0 616.1 602.3 636.7 636.4 614.6C649.2 606.3 652.2 600.8 652.8 584.7L653.2 573.0L660.5 582.7C684.2 614.5 711.6 629.5 746.0 629.4C784.3 629.3 807.2 614.6 837.0 571.0C849.3 553.0 854.6 546.0 856.0 546.0C857.6 546.0 860.9 558.4 867.0 587.1C878.1 638.6 882.2 646.0 901.1 649.1C922.0 652.6 939.3 644.9 943.6 630.4C948.3 614.8 941.1 565.9 920.9 476.0C901.9 391.4 897.8 381.2 875.7 363.1C816.9 315.2 749.8 307.6 703.5 343.8C686.7 357.0 664.2 382.3 651.5 402.4L646.5 410.3L645.8 395.9C641.9 320.3 637.6 277.5 632.7 265.0C628.9 255.6 616.8 252.0 599.0 255.0Z"/>
+        <path class="ll-s" data-g="h" d="M789.1 399.6C812.4 405.4 819.0 417.5 812.6 442.6C799.2 495.0 766.5 555.4 749.8 558.5C735.8 561.1 706.0 525.3 702.1 500.9C695.0 457.2 728.1 403.8 765.9 398.0C772.5 397.0 781.3 397.6 789.1 399.6Z"/>
+        <path class="ll-s" data-g="h" d="M191.6 414.6C208.6 424.6 217.9 446.3 223.5 488.9C229.2 532.2 218.9 569.8 198.3 580.9C174.4 593.9 155.9 590.1 142.2 569.6C119.9 536.3 119.9 488.6 142.0 443.5C155.3 416.4 175.0 404.9 191.6 414.6Z"/>
+      </g>
+      <circle class="ll-nib" r="9" cx="0" cy="0"/>
+    </svg>
+    <div class="loader-title">
+      <span class="loader-name">
+        <span style="--i:0">S</span><span style="--i:1">T</span><span style="--i:2">U</span><span style="--i:3">D</span><span style="--i:4">I</span><span style="--i:5">O</span>
+      </span>
+      <span class="loader-tag">– agencia de marketing y estudio creativo</span>
+    </div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <span class="loader-text">Cargando...</span>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <div class="container">
+      <div class="nav-inner">
+
+        <!-- Dos versiones del logo: crema sobre el hero, azul al hacer scroll -->
+        <!-- Logo + guion + descriptor: se ve completo en la barra de arriba en todos los anchos de pantalla -->
+        <div class="nav-brand">
+          <a href="#hero" class="nav-logo" aria-label="ONA Studio, inicio">
+            <img class="nav-logo-img logo-cream" src="assets/img/ona-studio-cream.png" alt="ONA Studio" width="130" height="36">
+            <img class="nav-logo-img logo-blue" src="assets/img/ona-studio-blue.png" alt="" aria-hidden="true" width="130" height="36">
+          </a>
+          <span class="nav-tag">agencia de marketing y estudio creativo</span>
+        </div>
+
+        <div class="nav-actions">
+          <a href="#contacto" class="btn-primary nav-cta">
+            Solicitar cotización
+          </a>
+
+          <!-- Abre el menú a pantalla completa con todas las secciones -->
+          <button class="hamburger" id="hamburger"
+                  aria-label="Abrir menú" aria-expanded="false" aria-controls="mob-menu">
+            <span class="hamburger-label">Menú</span>
+            <span class="hamburger-box" aria-hidden="true"><span></span><span></span><span></span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ MENÚ A PANTALLA COMPLETA ══════ -->
+    <nav id="mob-menu" aria-label="Menú principal">
+      <div class="container menu-grid">
+        <ul class="menu-list">
+          <li><a class="menu-link" href="#hero"><span class="menu-num">01</span>Inicio</a></li>
+          <li><a class="menu-link" href="#why"><span class="menu-num">02</span>Por qué ONA</a></li>
+          <li><a class="menu-link" href="#ambientes"><span class="menu-num">03</span>Servicios</a></li>
+          <li><a class="menu-link" href="#estudio"><span class="menu-num">04</span>Podcast y video</a></li>
+          <li><a class="menu-link" href="#proceso"><span class="menu-num">05</span>Proceso</a></li>
+          <li><a class="menu-link" href="#producto"><span class="menu-num">06</span>Paquete completo</a></li>
+          <li><a class="menu-link" href="#sectores"><span class="menu-num">07</span>Giros</a></li>
+          <li><a class="menu-link" href="#contacto"><span class="menu-num">08</span>Contacto</a></li>
+        </ul>
+
+        <div class="menu-side">
+          <p class="menu-hand">¡platiquemos!</p>
+          <ul class="menu-contact">
+            <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:ona.studiosc@gmail.com">ona.studiosc@gmail.com</a></li>
+            <li><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+523321697822">33 2169 7822</a></li>
+            <li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><a href="https://wa.me/523321697822" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><i class="fa-brands fa-instagram" aria-hidden="true"></i><a href="https://www.instagram.com/ona.studiosc?srtk=OHF4bG5hOXppNnA4" target="_blank" rel="noopener noreferrer">@ona.studiosc</a></li>
+          </ul>
+          <a href="#contacto" class="btn-primary menu-cta">Solicitar cotización <i class="fa-solid fa-arrow-right"></i></a>
+          <p class="menu-tag">– agencia de marketing y estudio creativo</p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════ -->
+  <main>
+    <section id="hero" aria-labelledby="hero-heading">
+
+      <!-- Foto del estudio en óvalo, con parallax (eco del isotipo) -->
+      <div class="hero-bg">
+        <img src="assets/img/ona-foto-escritorio.jpg"
+             alt="Laptop con el isotipo de ONA Studio en pantalla sobre el escritorio de un estudio creativo"
+             width="624" height="974" fetchpriority="high">
+      </div>
+      <!-- Overlays de profundidad -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <!-- Grid texture -->
+      <div class="hero-grid" aria-hidden="true"></div>
+      <!-- Canvas: aros y óvalos flotantes -->
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+      <!-- Haces de luz -->
+      <div class="hero-rays" aria-hidden="true">
+        <div class="hero-ray r1"></div>
+        <div class="hero-ray r2"></div>
+        <div class="hero-ray r3"></div>
+        <div class="hero-ray r4"></div>
+        <div class="hero-ray r5"></div>
+      </div>
+      <!-- Grano de película -->
+      <div class="hero-grain" aria-hidden="true"></div>
+      <!-- Barrido de luz (una sola vez) -->
+      <div class="hero-scanline" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+
+          <!-- Badge -->
+          <div class="hero-badge" id="hero-badge">
+            <div class="badge-dot" aria-hidden="true"></div>
+            Estudio creativo · Agencia de marketing
+          </div>
+
+          <!-- Titular animado (cada .line se revela con máscara) -->
+          <h1 class="hero-title" id="hero-heading">
+            <span class="line"><span>Tu esencia,</span></span>
+            <span class="line"><span>hecha marca,</span></span>
+            <span class="line"><span class="accent">hecha web.</span></span>
+          </h1>
+
+          <!-- Subtítulo -->
+          <p class="hero-sub" id="hero-sub">
+            En <strong>ONA Studio</strong> creamos estrategias visuales integrales, construimos la identidad de tu marca y desarrollamos <strong>sitios web funcionales</strong> que comunican quién eres de verdad, y hacen que te elijan.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-ctas" id="hero-ctas">
+            <a href="#contacto" class="btn-primary">
+              Solicitar mi cotización
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#ambientes" class="btn-outline">
+              Ver servicios
+            </a>
+          </div>
+
+          <!-- Trust bar -->
+          <div class="hero-trust" id="hero-trust" aria-label="Lo que nos distingue">
+            <div class="trust-item">
+              <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+              Estrategia integral
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+              Identidad a tu medida
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+              Webs que funcionan
+            </div>
+          </div>
+
+        </div><!-- /.hero-content -->
+      </div>
+
+      <!-- Scroll cue -->
+      <div class="scroll-cue" aria-hidden="true">
+        <div class="scroll-mouse">
+          <div class="scroll-mouse-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         MARQUEE (lo llena js/main.js)
+    ══════════════════════════════════════════════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-inner" id="marquee"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════
+         WHY — Por qué ONA
+    ══════════════════════════════════════════════════ -->
+    <section id="why" aria-labelledby="why-heading">
+      <div class="container">
+
+        <div class="why-header">
+          <div class="reveal">
+            <div class="label">Por qué ONA</div>
+            <h2 class="why-quote" id="why-heading">
+              Primero te escuchamos.
+              <em>Luego ponemos manos a la obra.</em>
+            </h2>
+          </div>
+          <p class="why-sub reveal d2">
+            Cada marca tiene su propia forma de hablar. Nosotros la grabamos, la editamos, la diseñamos y la ponemos en una página que funcione, para que se note quién eres sin que tengas que explicarlo.
+          </p>
+        </div>
+
+        <div class="features-grid">
+
+          <div class="f-card reveal">
+            <div class="f-num" aria-hidden="true">01</div>
+            <div class="f-icon" aria-hidden="true">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h3>Todo en una sola mesa</h3>
+            <p>Grabación, edición, diseño y web con el mismo equipo. Nadie tiene que volver a explicarle tu marca a un proveedor nuevo.</p>
+          </div>
+
+          <div class="f-card reveal d1">
+            <div class="f-num" aria-hidden="true">02</div>
+            <div class="f-icon" aria-hidden="true">
+              <i class="fa-solid fa-pen-ruler"></i>
+            </div>
+            <h3>Nada de plantillas</h3>
+            <p>Cada proyecto se arma desde cero, con tus colores, tu voz y tu historia.</p>
+          </div>
+
+          <div class="f-card reveal d2">
+            <div class="f-num" aria-hidden="true">03</div>
+            <div class="f-icon" aria-hidden="true">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h3>Hecho para que te contacten</h3>
+            <p>Cada pieza busca algo claro: que te conozcan, te recuerden y te escriban.</p>
+          </div>
+
+          <div class="f-card reveal d3">
+            <div class="f-num" aria-hidden="true">04</div>
+            <div class="f-icon" aria-hidden="true">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h3>Platicamos de todo</h3>
+            <p>Procesos claros, mensajes directos y revisiones contigo en cada etapa.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         SERVICIOS (#ambientes)
+    ══════════════════════════════════════════════════ -->
+    <section id="ambientes" aria-labelledby="amb-heading">
+      <div class="container">
+
+        <div class="ambientes-top">
+          <div class="reveal">
+            <div class="label">Servicios</div>
+            <h2 class="section-title" id="amb-heading">
+              Grabamos, editamos,<br>
+              <span class="hl">diseñamos y programamos.</span>
+            </h2>
+            <p>
+              Somos un estudio creativo y agencia de marketing. Del micrófono a tu página web, cubrimos lo que tu marca necesita para que la gente la conozca de verdad.
+            </p>
+          </div>
+          <div class="reveal d2">
+            <span class="ambiente-pill">¿Por dónde empezamos?</span>
+          </div>
+        </div>
+
+        <div class="ambientes-grid">
+
+          <!-- Estilo visual de marca -->
+          <div class="amb-card reveal">
+            <img class="amb-img"
+              src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=75&w=900&auto=format&fit=crop"
+              alt="Paletas de color y muestras de diseño para definir el estilo visual de una marca"
+              width="900" height="1300" loading="lazy" decoding="async">
+            <div class="amb-overlay">
+              <div class="amb-icon-wrap" aria-hidden="true"><i class="fa-solid fa-pen-nib"></i></div>
+              <h3>Estilo visual de marca</h3>
+              <p>Definimos cómo se ve tu marca: logotipo, colores, tipografía y la dirección visual para tus redes y materiales.</p>
+              <div class="amb-temp">Logotipo · Colores · Dirección visual</div>
+            </div>
+          </div>
+
+          <!-- Grabación de video -->
+          <div class="amb-card reveal d1">
+            <img class="amb-img"
+              src="https://images.unsplash.com/photo-1581368135153-a506cf13b1e1?q=75&w=900&auto=format&fit=crop"
+              alt="Hombre sonriente con audífonos grabando video y audio frente a un micrófono"
+              width="900" height="1300" loading="lazy" decoding="async">
+            <div class="amb-overlay">
+              <div class="amb-icon-wrap" aria-hidden="true"><i class="fa-solid fa-video"></i></div>
+              <h3>Grabación de video</h3>
+              <p>Grabamos tus videos, entrevistas y podcasts con buen audio y un set cuidado, para que se vean y se escuchen como merecen.</p>
+              <div class="amb-temp">Grabación · Audio · Set</div>
+            </div>
+          </div>
+
+          <!-- Edición de video -->
+          <div class="amb-card reveal d2">
+            <img class="amb-img"
+              src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=75&w=900&auto=format&fit=crop"
+              alt="Línea de tiempo de un programa de edición de video en pantalla"
+              width="900" height="1300" loading="lazy" decoding="async">
+            <div class="amb-overlay">
+              <div class="amb-icon-wrap" aria-hidden="true"><i class="fa-solid fa-film"></i></div>
+              <h3>Edición de video</h3>
+              <p>Cortamos, ritmamos y le damos el estilo de tu marca a tus videos: podcasts, reels y piezas para redes.</p>
+              <div class="amb-temp">Podcast · Reels · Redes</div>
+            </div>
+          </div>
+
+          <!-- Desarrollo web -->
+          <div class="amb-card reveal d3">
+            <img class="amb-img"
+              src="https://images.unsplash.com/photo-1580894908361-967195033215?q=75&w=900&auto=format&fit=crop"
+              alt="Desarrolladora trabajando en el código de un sitio web con dos monitores"
+              width="900" height="1300" loading="lazy" decoding="async">
+            <div class="amb-overlay">
+              <div class="amb-icon-wrap" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
+              <h3>Desarrollo web</h3>
+              <p>Armamos tu página web a la medida: clara, rápida y pensada para que tus clientes te contacten.</p>
+              <div class="amb-temp">Landing · Corporativo · A medida</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         PODCAST Y VIDEO (#estudio) — foto de fondo + polaroids
+         ACTUALIZAR las fotos por imágenes reales del estudio cuando las tengan
+    ══════════════════════════════════════════════════ -->
+    <section id="estudio" aria-labelledby="estudio-heading">
+
+      <div class="bg-photo" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?q=70&w=1800&auto=format&fit=crop"
+             alt="" width="1800" height="1200" loading="lazy" decoding="async">
+      </div>
+
+      <div class="container">
+        <div class="estudio-wrap">
+
+          <div class="estudio-copy reveal">
+            <div class="label">Podcast y video</div>
+            <h2 class="section-title" id="estudio-heading">
+              Tu voz se escucha mejor <span class="hl">cuando se ve bien</span>
+            </h2>
+            <p class="estudio-lead">
+              Si tienes algo que contar, lo grabamos contigo. Preparamos el set, cuidamos el audio, editamos el video y le ponemos el estilo visual de tu marca, para que lo que digas llegue con tu verdadera esencia.
+            </p>
+
+            <ul class="estudio-list">
+              <li>
+                <div class="estudio-icon" aria-hidden="true"><i class="fa-solid fa-microphone-lines"></i></div>
+                <div>
+                  <h4>Grabación de video y podcast</h4>
+                  <p>Conversaciones y entrevistas con buen sonido y buena imagen.</p>
+                </div>
+              </li>
+              <li>
+                <div class="estudio-icon" aria-hidden="true"><i class="fa-solid fa-film"></i></div>
+                <div>
+                  <h4>Edición de video</h4>
+                  <p>Episodios completos, cortes para reels y piezas para redes.</p>
+                </div>
+              </li>
+              <li>
+                <div class="estudio-icon" aria-hidden="true"><i class="fa-solid fa-pen-nib"></i></div>
+                <div>
+                  <h4>Estilo visual de marca</h4>
+                  <p>Portadas, títulos y gráficos con la identidad de tu marca.</p>
+                </div>
+              </li>
+            </ul>
+
+            <a href="#contacto" class="btn-primary">
+              Quiero grabar mi podcast
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="polaroids reveal d2">
+            <figure class="polaroid p1">
+              <img src="https://images.unsplash.com/photo-1559523161-0fc0d8b38a7a?q=75&w=700&h=740&auto=format&fit=crop"
+                   alt="Dos personas con audífonos y micrófonos grabando un podcast en un estudio iluminado con luz de softbox"
+                   width="700" height="740" loading="lazy" decoding="async">
+              <figcaption>grabamos</figcaption>
+            </figure>
+            <figure class="polaroid p2">
+              <img src="https://images.unsplash.com/photo-1627244714766-94dab62ed964?q=75&w=700&h=740&auto=format&fit=crop"
+                   alt="Persona con audífonos editando un video en una computadora con la línea de tiempo en pantalla"
+                   width="700" height="740" loading="lazy" decoding="async">
+              <figcaption>editamos</figcaption>
+            </figure>
+            <figure class="polaroid p3">
+              <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=75&w=700&auto=format&fit=crop"
+                   alt="Tableta con una letra dibujada y un cuaderno de diseño para el estilo visual de una marca"
+                   width="700" height="740" loading="lazy" decoding="async">
+              <figcaption>diseñamos</figcaption>
+            </figure>
+            <figure class="polaroid p4">
+              <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=75&w=700&auto=format&fit=crop"
+                   alt="Mano acomodando bocetos de las pantallas de un sitio web sobre un tablero"
+                   width="700" height="740" loading="lazy" decoding="async">
+              <figcaption>programamos</figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         PROCESO — Cómo trabajamos
+    ══════════════════════════════════════════════════ -->
+    <section id="proceso" aria-labelledby="proceso-heading">
+      <div class="container">
+
+        <div class="proceso-header reveal">
+          <div class="label">Cómo trabajamos</div>
+          <h2 class="section-title" id="proceso-heading">
+            Claro, creativo y <span class="hl">sin vueltas</span>
+          </h2>
+          <p>De la primera conversación al lanzamiento, te acompañamos en cada etapa con procesos claros y comunicación directa.</p>
+        </div>
+
+        <div class="proceso-grid">
+
+          <div class="proceso-step reveal">
+            <div class="step-number">Paso 01</div>
+            <h3>Platicamos & planeamos</h3>
+            <p>Conocemos tu negocio, a tu público y tu esencia. Definimos objetivos y la ruta creativa ideal. La primera asesoría es sin compromiso.</p>
+          </div>
+
+          <div class="proceso-step reveal d1">
+            <div class="step-number">Paso 02</div>
+            <h3>Grabamos, diseñamos & construimos</h3>
+            <p>Grabamos, editamos, diseñamos y programamos con revisiones contigo en cada etapa, para que el resultado sea justo lo que imaginaste, o mejor.</p>
+          </div>
+
+          <div class="proceso-step reveal d2">
+            <div class="step-number">Paso 03</div>
+            <h3>Lanzamos & acompañamos</h3>
+            <p>Publicamos, te entregamos todo ordenado y te acompañamos para que tu marca arranque con fuerza.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         PAQUETE DESTACADO (#producto)
+    ══════════════════════════════════════════════════ -->
+    <section id="producto" aria-labelledby="prod-heading">
+      <div class="container">
+        <div class="producto-wrap">
+
+          <!-- Info -->
+          <div class="reveal">
+            <div class="label">Paquete destacado</div>
+            <h2 class="section-title" id="prod-heading">
+              Tu marca completa,<br>
+              <span class="hl">lista para salir al aire</span>
+            </h2>
+            <p class="producto-lead">
+              Arrancamos con tu estilo visual, grabamos tu podcast en video, lo editamos y lo montamos en tu página web. Todo con la misma mirada, de la primera idea al día en que sales al aire.
+            </p>
+
+            <ul class="feature-rows" aria-label="Qué incluye el paquete completo">
+              <li class="f-row">
+                <div class="f-row-icon" aria-hidden="true"><i class="fa-solid fa-pen-nib"></i></div>
+                <div>
+                  <h4>Estilo visual de marca</h4>
+                  <p>Logotipo, colores, tipografía y lineamientos para que todo se vea como tú.</p>
+                </div>
+              </li>
+              <li class="f-row">
+                <div class="f-row-icon" aria-hidden="true"><i class="fa-solid fa-video"></i></div>
+                <div>
+                  <h4>Grabación de video</h4>
+                  <p>Grabamos tu podcast, entrevistas y videos con buen audio y un set cuidado.</p>
+                </div>
+              </li>
+              <li class="f-row">
+                <div class="f-row-icon" aria-hidden="true"><i class="fa-solid fa-film"></i></div>
+                <div>
+                  <h4>Edición de video</h4>
+                  <p>Episodios, reels y piezas para redes con el estilo de tu marca.</p>
+                </div>
+              </li>
+              <li class="f-row">
+                <div class="f-row-icon" aria-hidden="true"><i class="fa-solid fa-laptop-code"></i></div>
+                <div>
+                  <h4>Página web a tu medida</h4>
+                  <p>Rápida, clara y hecha para que te contacten en un clic.</p>
+                </div>
+              </li>
+            </ul>
+
+            <!-- ACTUALIZAR con los entregables reales del paquete -->
+            <div class="specs-bar" role="list" aria-label="Entregables del paquete">
+              <div class="spec-cell" role="listitem">
+                <span class="spec-val">Marca</span>
+                <span class="spec-name">Estilo visual</span>
+              </div>
+              <div class="spec-cell" role="listitem">
+                <span class="spec-val">Video</span>
+                <span class="spec-name">Grabación</span>
+              </div>
+              <div class="spec-cell" role="listitem">
+                <span class="spec-val">Edición</span>
+                <span class="spec-name">Reels y más</span>
+              </div>
+              <div class="spec-cell" role="listitem">
+                <span class="spec-val">Web</span>
+                <span class="spec-name">A tu medida</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual -->
+          <div class="reveal d2">
+            <div class="panel-scene">
+              <div class="feature-visual">
+                <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?q=80&w=1000&auto=format&fit=crop"
+                     alt="Diseñadora creando el estilo visual de una marca con tableta gráfica, muestras de color y laptop"
+                     width="1000" height="1250" loading="lazy" decoding="async">
+              </div>
+              <div class="p-badge pb-tl" aria-hidden="true">
+                <div class="p-badge-dot"></div>
+                Video + Estilo + Web
+              </div>
+              <div class="p-badge pb-br" aria-hidden="true">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                100% a tu medida
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         STATS
+         ACTUALIZAR con cifras reales del estudio cuando las tengan
+    ══════════════════════════════════════════════════ -->
+    <section id="stats" aria-label="ONA en cifras">
+
+      <div class="bg-photo" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1603201667141-5a2d4c673378?q=70&w=1800&auto=format&fit=crop"
+             alt="" width="1800" height="1200" loading="lazy" decoding="async">
+      </div>
+
+      <div class="container">
+        <div class="stats-grid reveal" role="list">
+
+          <div class="stat-cell" role="listitem">
+            <div class="stat-num"
+                 data-count="4" data-suffix=""
+                 aria-label="4 servicios">0</div>
+            <div class="stat-lbl">Servicios:<br>video, podcast, marca y web</div>
+          </div>
+
+          <div class="stat-cell" role="listitem">
+            <div class="stat-num"
+                 data-count="100" data-suffix="%"
+                 aria-label="100 por ciento">0</div>
+            <div class="stat-lbl">Hecho<br>a tu medida</div>
+          </div>
+
+          <div class="stat-cell" role="listitem">
+            <div class="stat-num"
+                 data-count="24" data-suffix=" h"
+                 aria-label="24 horas">0</div>
+            <div class="stat-lbl">Para responder<br>tu solicitud</div>
+          </div>
+
+          <div class="stat-cell" role="listitem">
+            <div class="stat-num"
+                 data-count="1" data-suffix=""
+                 aria-label="1 equipo">0</div>
+            <div class="stat-lbl">Equipo creativo<br>de inicio a fin</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         GIROS (#sectores)
+    ══════════════════════════════════════════════════ -->
+    <section id="sectores" aria-labelledby="sec-heading">
+      <div class="container">
+
+        <div class="sectores-hdr reveal">
+          <div class="label">Giros</div>
+          <h2 class="section-title" id="sec-heading">
+            Marcas con esencia <span class="hl">en cualquier giro</span>
+          </h2>
+          <p>Desde emprendimientos que apenas arrancan hasta negocios listos para dar el siguiente paso.</p>
+        </div>
+
+        <div class="sectores-grid" role="list">
+          <div class="sector-card reveal" role="listitem">
+            <i class="fa-solid fa-utensils sector-icon" aria-hidden="true"></i>
+            <h3>Restaurantes<br>& cafés</h3>
+          </div>
+          <div class="sector-card reveal d1" role="listitem">
+            <i class="fa-solid fa-heart-pulse sector-icon" aria-hidden="true"></i>
+            <h3>Salud &<br>bienestar</h3>
+          </div>
+          <div class="sector-card reveal d2" role="listitem">
+            <i class="fa-solid fa-gem sector-icon" aria-hidden="true"></i>
+            <h3>Moda &<br>belleza</h3>
+          </div>
+          <div class="sector-card reveal d3" role="listitem">
+            <i class="fa-solid fa-podcast sector-icon" aria-hidden="true"></i>
+            <h3>Podcasters<br>& creadores</h3>
+          </div>
+          <div class="sector-card reveal d4" role="listitem">
+            <i class="fa-solid fa-briefcase sector-icon" aria-hidden="true"></i>
+            <h3>Emprendedores<br>& profesionales</h3>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         CONTACTO
+    ══════════════════════════════════════════════════ -->
+    <section id="contacto" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <div class="contact-hdr reveal">
+          <div class="label">Contacto</div>
+          <h2 class="section-title" id="contact-heading">
+            Hablemos de <span class="hl">tu marca</span>
+          </h2>
+          <p>Cuéntanos qué necesitas y recibe tu cotización sin compromiso. Te respondemos lo más pronto posible.</p>
+        </div>
+
+        <div class="contact-box reveal">
+
+          <!-- Info panel -->
+          <div class="contact-info">
+            <div class="bg-photo" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=70&w=1000&auto=format&fit=crop"
+                   alt="" width="1000" height="1250" loading="lazy" decoding="async">
+            </div>
+            <h3>Hagamos algo con esencia</h3>
+            <p class="ci-sub">Creamos estrategias visuales integrales, construimos la identidad de tu marca y desarrollamos sitios web funcionales que comunican tu verdadera esencia.</p>
+
+            <ul class="ci-list">
+              <li class="ci-item">
+                <div class="ci-icon" aria-hidden="true">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="ci-body">
+                  <h4>Escríbenos</h4>
+                  <p><a href="mailto:ona.studiosc@gmail.com">ona.studiosc@gmail.com</a></p>
+                </div>
+              </li>
+              <li class="ci-item">
+                <div class="ci-icon" aria-hidden="true">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="ci-body">
+                  <h4>Llámanos</h4>
+                  <p><a href="tel:+523321697822">33 2169 7822</a></p>
+                </div>
+              </li>
+              <li class="ci-item">
+                <div class="ci-icon" aria-hidden="true">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="ci-body">
+                  <h4>WhatsApp</h4>
+                  <p>Escríbenos y platicamos tu proyecto.</p>
+                  <a href="https://wa.me/523321697822" target="_blank"
+                     rel="noopener noreferrer" class="ci-wa-link">
+                    Abrir chat →
+                  </a>
+                </div>
+              </li>
+              <li class="ci-item">
+                <div class="ci-icon" aria-hidden="true">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="ci-body">
+                  <h4>Instagram</h4>
+                  <p><a href="https://www.instagram.com/ona.studiosc?srtk=OHF4bG5hOXppNnA4"
+                        target="_blank" rel="noopener noreferrer">@ona.studiosc</a></p>
+                </div>
+              </li>
+            </ul>
+          </div><!-- /.contact-info -->
+
+          <!-- Form -->
+          <div class="contact-form-wrap">
+            <h3>Solicitar cotización</h3>
+            <form id="wa-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="f-name">Nombre completo</label>
+                  <input type="text" id="f-name" class="form-control"
+                         placeholder="Ej. Ana Martínez" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-interest">¿Qué necesitas?</label>
+                  <select id="f-interest" class="form-control">
+                    <option>Cotización general</option>
+                    <option>Grabación de video</option>
+                    <option>Edición de video</option>
+                    <option>Estilo visual de marca</option>
+                    <option>Desarrollo web</option>
+                    <option>Paquete completo</option>
+                    <option>Aún no lo sé, necesito asesoría</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-msg">Cuéntanos tu proyecto</label>
+                <textarea id="f-msg" class="form-control" rows="4" required
+                          placeholder="¿A qué te dedicas, qué quieres lograr y para cuándo lo necesitas?"></textarea>
+              </div>
+              <button type="submit" class="form-submit">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                Solicitar cotización por WhatsApp
+              </button>
+              <p class="form-note">
+                Al enviar se abrirá WhatsApp con tu mensaje listo para continuar la conversación con nosotros.
+              </p>
+            </form>
+          </div>
+
+        </div><!-- /.contact-box -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <img class="footer-trio" src="assets/img/ona-trio-cream.png" alt="" aria-hidden="true" width="846" height="475" loading="lazy">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo" aria-label="ONA Studio, volver al inicio">
+            <img src="assets/img/ona-studio-cream.png" alt="ONA Studio" width="151" height="42" loading="lazy">
+          </a>
+          <span class="nav-tag">agencia de marketing y estudio creativo</span>
+        </div>
+        <p class="footer-copy">
+          &copy; <span id="year">2026</span> ONA Studio. Todos los derechos reservados.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/ona.studiosc?srtk=OHF4bG5hOXppNnA4"
+             target="_blank" rel="noopener noreferrer"
+             class="footer-soc" aria-label="Instagram de ONA Studio">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="mailto:ona.studiosc@gmail.com"
+             class="footer-soc" aria-label="Enviar correo a ONA Studio">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/523321697822" target="_blank"
+             rel="noopener noreferrer" class="footer-soc" aria-label="WhatsApp de ONA Studio">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      <p class="footer-note">gracias por darte una vuelta</p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════
+       WHATSAPP FLOTANTE
+  ══════════════════════════════════════════════════════ -->
+  <a href="https://wa.me/523321697822?text=Hola%2C%20vi%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20con%20ONA%20Studio."
+     target="_blank" rel="noopener noreferrer"
+     class="wa-btn" aria-label="Escribir a ONA Studio por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
