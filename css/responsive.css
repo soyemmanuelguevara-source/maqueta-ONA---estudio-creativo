@@ -1,0 +1,114 @@
+/* ═══════════════════════════════════════════════════════════════
+   ONA STUDIO — Ajuste responsive (css/responsive.css)
+   Solo reacomoda y dimensiona en pantallas menores a 1280 px (y en las bajas o táctiles de ese rango): mismo texto,
+   mismo diseño, mismas transiciones. Cada regla vive dentro de un @media (max-width: …): en computadora (≥ 1280 px)
+   no aplica nada. Se carga después de styles.css y usa los mismos selectores para ganar por orden (sin !important).
+   Para desactivar todo el ajuste: quitar el <link> a este archivo en index.html.
+═══════════════════════════════════════════════════════════════ */
+
+
+/* ── 1 · PORTADA ─────────────────────────────────────────── */
+
+/* Celular girado (poca altura): los servicios bajan para no quedar debajo de REC y del código de tiempo del visor */
+@media (max-width: 1279px) and (max-height: 500px) and (orientation: landscape) {
+  .hero { padding-top: calc(var(--header-h) + 50px); }
+}
+
+/* Celulares de poca altura (≤ 800 px): la portada se compacta (menos aire entre piezas, botones de 46 px, el texto sigue
+   en 16 px) para que los botones queden lo más arriba posible de la barra de navegación de abajo */
+@media (max-width: 479px) and (max-height: 800px) {
+  .hero { padding-top: calc(var(--header-h) + 12px); padding-bottom: 20px; }
+  .hero__eyebrow { margin-bottom: max(18px, .13 * var(--hfs) + 24px); gap: 5px; }
+  .hero__eyebrow > span:not(.sr-only) { padding: 5px 10px 5px 9px; }
+  .hero__sub { margin-top: 10px; line-height: 1.4; }
+  .hero__ctas { margin-top: 12px; gap: 8px; }
+  .hero__ctas .btn--lg { min-height: 46px; padding-block: 6px; }
+}
+
+
+/* Celular muy angosto (< 360 px): los servicios bajan de las esquinas superiores del visor. Va después del bloque de
+   arriba (mismo selector) para ganarle por orden. */
+@media (max-width: 359px) {
+  .hero { padding-top: calc(var(--header-h) + 40px); }
+}
+
+
+/* ── 2 · CINTA DE SERVICIOS (con movimiento reducido) ────── */
+
+/* Sin animación, la cinta se acomoda en renglones; en celular las palabras más largas no cabían y se cortaban */
+@media (max-width: 559px) and (prefers-reduced-motion: reduce) {
+  .marquee__set span { white-space: normal; text-align: center; }
+}
+
+
+/* ── 3 · CÓMO TRABAJAMOS (la línea de tiempo) ─────────────── */
+
+/* Celular: los nombres de los clips se cortaban con "…" ("Graba…", "Identidad d…"). Ahora van en dos renglones, con la
+   columna de nombres de pista un poco más angosta para dar más ancho a los clips; cada clip mide 44 px de alto (táctil) */
+@media (max-width: 759px) {
+  .tl__body { --name: 66px; }
+  .tl__name { padding-right: 6px; font-size: .5625rem; letter-spacing: .04em; }
+  .tl__clip { top: 2px; bottom: 2px; padding: 4px 6px; }
+  .tl__clip span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; font-size: .625rem; line-height: 1.15; overflow-wrap: break-word; hyphens: auto; }
+}
+/* Tableta vertical: el clip más largo perdía 3 px; también puede ir en dos renglones */
+@media (min-width: 760px) and (max-width: 1023px) {
+  .tl__clip span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; line-height: 1.1; }
+}
+
+
+/* ── 4 · CELULAR GIRADO: el celular de "La brecha" cabe completo en la pantalla ── */
+
+/* Con poca altura, la figura del celular medía más que la pantalla. Se ajusta solo el contenedor (escala con su
+   ancho): el interior, la secuencia y las proporciones no cambian. */
+@media (max-width: 1279px) and (max-height: 500px) and (orientation: landscape) {
+  .estudio { width: min(100%, 460px, (100svh - 40px) * 4 / 5.6); }
+}
+
+
+/* ── 5 · OBJETIVOS TÁCTILES (≥ 44 px) sin cambiar cómo se ven ── */
+
+/* En pantallas táctiles el área de toque crece con un pseudoelemento invisible; el dibujo de cada botón no cambia.
+   Las fichas de preguntas rápidas sí crecen a 44 px de alto (su fila tiene scroll y recortaría un área invisible). */
+@media (max-width: 1279px) and (pointer: coarse) {
+  .header__logo::after { content: ""; position: absolute; inset: -6px -4px; }
+  .header__ig { position: relative; }
+  .header__ig::after { content: ""; position: absolute; inset: -3px; border-radius: 50%; }
+  .compare__tag::after { content: ""; position: absolute; inset: -6px -2px; }
+  .nimbus-nav[data-compact] .nimbus-item::after { content: ""; position: absolute; inset: -1px -3px; }
+  .chat__chip { min-height: 44px; }
+}
+
+
+/* ── 6 · LETRA ───────────────────────────────────────────── */
+
+/* La nota de la calculadora (13 px) sube a 14 px en celular */
+@media (max-width: 767px) {
+  .calc__note { font-size: .875rem; }
+}
+
+
+/* Texto corrido en celular: nada de cuerpo por debajo de 16 px (el párrafo de la portada bajaba a 14.4 px en celulares chicos;
+   la descripción de cada entregable y el mensaje del chat quedaban entre 15 y 15.5 px). Solo cambia el tamaño. */
+@media (max-width: 759px) {
+  .hero__sub { font-size: 1rem; }
+  .incluye__list span { font-size: 1rem; }
+  .chat__msj { font-size: 1rem; }
+}
+
+
+/* ── 7 · FORMULARIO CON EL TECLADO ABIERTO ─────────────── */
+
+/* Celular: al enfocar un campo, el navegador lo trae a la vista dejando libre la franja de la barra de navegación de
+   abajo (antes el campo quedaba debajo de ella con el teclado abierto). La barra no cambia. */
+@media (max-width: 759px) {
+  html { scroll-padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+}
+
+
+/* ── 8 · PIE ─────────────────────────────────────────────── */
+
+/* Tableta: al llegar al final, el "© 2026 Ona Studio" quedaba debajo del botón flotante de WhatsApp */
+@media (min-width: 760px) and (max-width: 1279px) {
+  .footer { padding-bottom: calc(var(--s-4) + 72px); }
+}

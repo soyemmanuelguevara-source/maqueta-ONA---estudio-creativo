@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# SITE_URL pendiente: al definir el dominio, python3 seo/aplicar-site-url.py https://www.tu-dominio.com lo cambia aquí.
+Sitemap: https://SITE_URL.invalid/sitemap.xml
